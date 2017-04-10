@@ -136,7 +136,7 @@ public func Log(_ domain: LoggerDomain, _ level: LoggerLevel, _ format: @autoclo
 			guard
 				let tiff = image.tiffRepresentation,
 				let bitmapRep = NSBitmapImageRep(data: tiff),
-				let imageData = bitmapRep.representation(using: NSPNGFileType, properties: nil)  else {
+                let imageData = bitmapRep.representation(using: NSPNGFileType, properties: [:])  else {
 					return
 			}
 			let fileNameCstr = stringToCStr(filename)
